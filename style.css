@@ -21,12 +21,14 @@ body {
 }
 
 nav {
-  /* width: calc(100% - var(--sidebar-width));
-  height: 15%; */
   grid-area: navbar;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffc67d;
+  margin: 10px;
+  width: 100%;
+  border-radius: 12px;
 }
 
 h1 {
@@ -40,12 +42,20 @@ h1 {
   color: white;
   width: 200px;
   font-size: 1rem;
+  margin: 10px;
 }
 
 .sidebar {
   grid-area: sidebar;
   background-color: blueviolet;
   border-radius: 12px;
+  padding: 15px;
+}
+
+.sidebar .input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .sidebar h1 {
@@ -73,6 +83,8 @@ h1 {
   background-color: #ffc67d;
   height: 100%;
   width: 100%;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 .book {
