@@ -11,7 +11,8 @@
         <h1>Library</h1>
         <button class="new-book">Add New Book+</button>
       </nav>
-      <div class="sidebar">
+      <div class="sidebar hidden">
+        <h1>New Book</h1>
         <form action="script.js">
           <div class="author-input">
             <label for="author">Author</label>
@@ -33,12 +34,12 @@
           </div>
           <div class="pages-input">
             <label for="pages">Pages</label>
-            <input type="number" id="pages" placeholder="500"/>
+            <input type="number" id="pages" placeholder="500" />
           </div>
           <fieldset>
             <legend>Finished Reading?</legend>
             <div>
-              <label for=""y-read>Yes</label>
+              <label for="" y-read>Yes</label>
               <input type="radio" id="y-read" />
             </div>
             <div>
@@ -48,7 +49,9 @@
           </fieldset>
         </form>
       </div>
-      <div class="main-content"></div>
+      <div class="main-content">
+        <div class="book">hello</div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
