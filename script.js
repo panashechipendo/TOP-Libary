@@ -47,6 +47,7 @@ function addToDisplay(arr) {
   // take array, create element then display it on DOM
   for (item of arr) {
     const book1 = document.createElement("div");
+    book1.dataset.uniqueId = item.id;
     let innerEl = [
       document.createElement("h3"),
       document.createElement("p"),
@@ -54,6 +55,15 @@ function addToDisplay(arr) {
       document.createElement("p"),
       document.createElement("p"),
     ];
+
+    const delBtn = document.createElement("button");
+    const readBtn = document.createElement("button");
+
+    delBtn.classList.toggle("book-btn");
+    readBtn.classList.toggle("book-btn");
+
+    delBtn.textContent = "Delete";
+    readBtn.textContent = item.read == true ? "Not Read" : "Read";
 
     const innerEl2 = Array.from(innerEl);
 
@@ -68,13 +78,30 @@ function addToDisplay(arr) {
       console.log(entry);
       book1.append(entry);
     }
+    book1.append(readBtn);
+    book1.append(delBtn);
     display.append(book1);
+
+    delBtn.addEventListener("click", () => {
+      deleteBook(item.id);
+    });
   }
 }
 
 function clearDisplay() {
   const books = document.querySelectorAll(".book");
   books.forEach((div) => div.remove());
+}
+
+function deleteBook(item) {
+  console.log(item);
+  const removedEl = document.querySelector(`[data-unique-id="${item}"]`);
+  removedEl.remove();
+  for (let i = myLibrary.length - 1; i >= 0; i--) {
+    if (myLibrary[i].id === item) {
+      myLibrary.splice(i, 1);
+    }
+  }
 }
 
 newBookBtn.addEventListener("click", hideSidebar);
@@ -92,6 +119,4 @@ form.addEventListener("submit", (event) => {
 
   addBookToLibrary(title, author, pages, selectValue);
   addToDisplay(myLibrary);
-  console.log(myLibrary);
-  console.log();
 });

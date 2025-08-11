@@ -98,9 +98,13 @@ h1 {
 }
 
 .book {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   border-radius: 10px;
   margin: 5px;
   min-width: 250px;
+  max-width: 280px;
   min-height: 300px;
   max-height: 50%;
   background-color: cornsilk;
