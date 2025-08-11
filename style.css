@@ -1,0 +1,26 @@
+:root {
+  --sidebar-width: 350px;
+  --gap: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "JetBrains Mono", "Roboto", sans-serif;
+}
+
+body {
+  margin: 15px;
+  background-color: aqua;
+}
+
+nav {
+  width: calc(100% - var(--sidebar-width));
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-book {
+  height: 30px;
+}

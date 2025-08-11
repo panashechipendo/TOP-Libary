@@ -12,11 +12,43 @@
         <button class="new-book">Add New Book+</button>
       </nav>
       <div class="sidebar">
-
+        <form action="script.js">
+          <div class="author-input">
+            <label for="author">Author</label>
+            <input
+              type="text"
+              id="author"
+              placeholder="J.R.R. Tolkien"
+              required
+            />
+          </div>
+          <div class="title-input">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              placeholder="Lord of the Rings"
+              required
+            />
+          </div>
+          <div class="pages-input">
+            <label for="pages">Pages</label>
+            <input type="number" id="pages" placeholder="500"/>
+          </div>
+          <fieldset>
+            <legend>Finished Reading?</legend>
+            <div>
+              <label for=""y-read>Yes</label>
+              <input type="radio" id="y-read" />
+            </div>
+            <div>
+              <label for="n-read">No</label>
+              <input type="radio" id="n-read" />
+            </div>
+          </fieldset>
+        </form>
       </div>
-      <div class="main-content">
-        
-      </div>
+      <div class="main-content"></div>
     </div>
     <script src="script.js"></script>
   </body>
