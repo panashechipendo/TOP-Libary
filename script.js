@@ -30,6 +30,8 @@ Book.prototype.bookID = function () {
   return id;
 };
 
+Book.prototype.toggleRead = function () {};
+
 function addBookToLibrary(title, author, pages, read) {
   // take params, create a book then store it in the array
   const newBook = new Book(title, author, pages, read);
@@ -82,6 +84,17 @@ function addToDisplay(arr) {
     book1.append(delBtn);
     display.append(book1);
 
+    readBtn.addEventListener("click", () => {
+      for (let i = myLibrary.length - 1; i >= 0; i--) {
+        if (myLibrary[i].id === item.id) {
+          myLibrary[i].read = !myLibrary[i].read;
+          console.log(myLibrary[i].read);
+          innerEl2[3].textContent =
+            myLibrary[i].read == true ? "Read?: yes" : "Read?: no";
+        }
+      }
+    });
+
     delBtn.addEventListener("click", () => {
       deleteBook(item.id);
     });
@@ -93,8 +106,9 @@ function clearDisplay() {
   books.forEach((div) => div.remove());
 }
 
+function haveRead(el) {}
+
 function deleteBook(item) {
-  console.log(item);
   const removedEl = document.querySelector(`[data-unique-id="${item}"]`);
   removedEl.remove();
   for (let i = myLibrary.length - 1; i >= 0; i--) {

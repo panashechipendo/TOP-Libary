@@ -101,11 +101,19 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
   border-radius: 10px;
   margin: 5px;
+  padding: 10px;
   min-width: 250px;
   max-width: 280px;
   min-height: 300px;
   max-height: 50%;
   background-color: cornsilk;
+}
+
+.book-btn {
+  width: 75%;
+  color: cornsilk;
+  background-color: blueviolet;
 }
